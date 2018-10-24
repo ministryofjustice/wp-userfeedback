@@ -11,3 +11,10 @@ RUN make clean && \
     bin/composer-auth.sh && \
     make build && \
     rm -f auth.json
+
+# Set execute bit permissions before running build scripts
+RUN chmod +x bin/* && sleep 1 && \
+    make clean && \
+    bin/composer-auth.sh && \
+    make build && \
+    rm -f auth.json
